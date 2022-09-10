@@ -793,6 +793,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\.\/images\/bg-pentagon\.svg\'\)\] {
   background-image: url('../images/bg-pentagon.svg');
 }

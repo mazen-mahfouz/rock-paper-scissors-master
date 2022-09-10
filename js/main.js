@@ -39,31 +39,34 @@ let state_text = document.querySelectorAll('#state > h1')[0];
 let state_button = document.querySelectorAll('#state > span')[0];
 let skill_win = document.querySelectorAll('#battle > div > .skills');
 let score = document.getElementById('score');
-
-function logic(key_player, custom_player, vs_player, key_win_1, key_win_2, key_lose_1, key_lose_2, background_button){
+let item_score = 0;
+function logic(key_player, custom_player, vs_player, key_win_1, key_win_2, key_lose_1, key_lose_2, background_button,background_button_key){
     if(custom_player == key_player){
         if(key_player == vs_player){
             state_text.innerText = 'DRAW';
             skill_win[0].className += ' active_win ';
             skill_win[1].className += ' active_win ';
+            state_button.style.backgroundImage = `linear-gradient(to top, ${background_button_key})`;
             setTimeout(() => {
                 r.style.setProperty('--size_win', 50 + 'px');
             }, 900);
         }else if(vs_player == key_win_1 || vs_player == key_win_2){
             state_text.innerText = 'YOU WIN';
             skill_win[0].className += ' active_win '; 
+            state_button.style.backgroundImage = `linear-gradient(to top, ${background_button_key})`;
             setTimeout(() => {
                 r.style.setProperty('--size_win', 50 + 'px');
             }, 900);
-            score.innerText = eval(1 + score.innerText);
-            state_button.style.backgroundImage = `linear-gradient(to top, ${key_player[0].background})`;
+            item_score += 1; 
+            score.innerText = item_score;
         }else if(vs_player == key_lose_1 || vs_player == key_lose_2){
             state_text.innerText = 'YOU LOSE';
             skill_win[1].className += ' active_win ';
             setTimeout(() => {
                 r.style.setProperty('--size_win', 50 + 'px');
             }, 900);
-            score.innerText = eval(score.innerText - 1);
+            item_score -= 1; 
+            score.innerText = item_score;
             state_button.style.backgroundImage = `linear-gradient(to top, ${background_button})`;
         }
     }
@@ -102,11 +105,11 @@ function select_skills(x){
                 state.style.visibility = 'visible';
                 state.style.opacity = 1;
             }, 1500);
-            logic(filter[0].key, 'scissors', array_skills[random_skills].key, 'paper', 'lizard', 'spock', 'rock', array_skills[random_skills].background)
-            logic(filter[0].key, 'spock', array_skills[random_skills].key, 'scissors', 'rock', 'lizard', 'paper', array_skills[random_skills].background)
-            logic(filter[0].key, 'paper', array_skills[random_skills].key, 'rock', 'spock', 'scissors', 'lizard', array_skills[random_skills].background)
-            logic(filter[0].key, 'lizard', array_skills[random_skills].key, 'paper', 'spock', 'rock', 'scissors', array_skills[random_skills].background)
-            logic(filter[0].key, 'rock', array_skills[random_skills].key, 'scissors', 'lizard', 'spock', 'paper', array_skills[random_skills].background)
+            logic(filter[0].key, 'scissors', array_skills[random_skills].key, 'paper', 'lizard', 'spock', 'rock', array_skills[random_skills].background, filter[0].background)
+            logic(filter[0].key, 'spock', array_skills[random_skills].key, 'scissors', 'rock', 'lizard', 'paper', array_skills[random_skills].background, filter[0].background)
+            logic(filter[0].key, 'paper', array_skills[random_skills].key, 'rock', 'spock', 'scissors', 'lizard', array_skills[random_skills].background, filter[0].background)
+            logic(filter[0].key, 'lizard', array_skills[random_skills].key, 'paper', 'spock', 'rock', 'scissors', array_skills[random_skills].background, filter[0].background)
+            logic(filter[0].key, 'rock', array_skills[random_skills].key, 'scissors', 'lizard', 'spock', 'paper', array_skills[random_skills].background, filter[0].background)
     }, 3000);
 
 
