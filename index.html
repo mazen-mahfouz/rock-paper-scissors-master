@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,700;1,600&display=swap">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <!-- Score
+  Rules
+
+  You Picked
+  The House Picked
+
+  You Win
+  You Lose
+
+  Play Again -->
+
+</head>
+
+<body class="text-center text-[12px] sm:text-lg">
+
+  <div id="app" class="p-[28px] grid gap-[10vh] place-items-center overflow-hidden">
+    <header
+      class="w-[100%] pl-[20px] pr-[10px] py-[10px] grid items-center grid-cols-2 border-[3px] border-[hsl(217,_16%,_45%)] rounded-lg sm:w-[70%] lg:w-[55%] xl:w-[50%] m-auto xl:py-[15px] xl:pl-[25px] xl:pr-[20px]">
+      <img src="images/logo-bonus.svg" class="w-[5em]" alt="logo">
+      <div class="px-7 xl:px-10 xl h-full bg-[#f6f6f6] grid justify-self-end pt-[10px] pb-[7px] rounded leading-[1.08]">
+        <h3 class="text-[hsl(229,_64%,_46%)] text-[.8em] tracking-widest">SCORE</h3>
+        <h1 id="score" class="text-[hsl(229,_25%,_31%)] text-[3.2em]">0</h1>
+      </div>
+    </header>
+
+    <div id="select" class="w-full h-[320px] sm:h-[400px] md:h-[460px] transition-all duration-500 ease-in-out">
+      <div
+        class="w-full h-full grid place-items-center bg-center bg-[length:250px] bg-[url('../images/bg-pentagon.svg')] sm:bg-[length:365px] md:bg-[length:400px] bg-no-repeat relative">
+        <div class="skills" onclick="select_skills('scissors')">
+          <div class="containt">
+            <img src="images/icon-scissors.svg" class="w-[30px] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <div class="skills" onclick="select_skills('spock')">
+          <div class="containt">
+            <img src="images/icon-spock.svg" class="w-[30px] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <div class="skills" onclick="select_skills('paper')">
+          <div class="containt">
+            <img src="images/icon-paper.svg" class="w-[30px] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <div class="skills" onclick="select_skills('rock')">
+          <div class="containt">
+            <img src="images/icon-rock.svg" class="w-[30px] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <div class="skills" onclick="select_skills('lizard')">
+          <div class="containt">
+            <img src="images/icon-lizard.svg" class="w-[30px] md:w-[50px]" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="battle" class="grid-cols-2 grid-rows-[auto_auto] md:grid-cols-3 md:row-auto gap-[2em_50px] leading-normal md:leading-[2.5] md:mt-[18vh] hidden transition-all duration-500 ease-in-out opacity-0">
+      <div class="w-[100%] grid justify-items-center">
+        <div class="active skills"
+          style="position: relative !important; transform: translate(0); opacity: 1;">
+          <div class="containt">
+            <img src="" class="w-[3.4em] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <p class="text-[1.3em] sm:text-[.9em] font-light  text-[#fefdfb] mt-[25px] tracking-[1px]">YOU PICKED</p>
+      </div>
+      <div id="state" class=" col-[1/3] row-[2/2] md:row-auto md:col-auto invisible transition-all duration-500 ease-in-out opacity-0">
+        <h1 class="text-[#fefdfb] text-[4em] sm:text-[3em] mb-[.2em]">YOU WIN</h1>
+        <span onclick="play_again()" id="play-again" class="transition-all duration-500 ease-in-out sm:text-[1em] text-[#ececec] px-[50px] md:px-[40px] lg:px-[60px] py-[13px] cursor-pointer text-[1.2em] tracking-[4px] font-thin rounded-lg hover:bg-[#c26b1c] hover:text-[#fefdfb]">PLAY
+          AGAIN</span>
+      </div>
+      <div class="w-[100%] grid justify-items-center">
+        <div class="active skills "
+          style="position: relative !important; transform: translate(0); opacity: 1;">
+          <div class="containt">
+            <img src="" class="w-[3.4em] md:w-[50px]" alt="">
+          </div>
+        </div>
+        <p class="text-[1.3em] sm:text-[.9em] font-light  text-[#fefdfb] mt-[25px] tracking-[1px]">THE HOUSE PICKED</p>
+      </div>
+    </div>
+
+    <div id="rules" class="w-full flex justify-center md:justify-end md:absolute -bottom-6 right-7 sm:-mt-[20px]">
+      <span onclick="rules('open')"
+        class="cursor-pointer text-[#e4e8ef] text-[1.5em] sm:text-[1em] tracking-[5px] font-light border-[2.5px] border-[hsl(217,_16%,_45%)] md:py-[8px] md:px-[30px] md:text-[1.1em] rounded-lg py-[10px] px-[35px] transition-all duration-500 ease-in-out  hover:bg-[#606e8518]">RULES</span>
+    </div>
+  </div>
+
+  <div id="rules-side"
+    class="md:flex-wrap md:justify-between md:items-baseline md:pb-[80px] flex z-40 text-center absolute mt-5 md:mt-10 pt-10 px-10 pb-10 -top-[150%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full bg-white items-center flex-col transition-all duration-500 ease-in-out md:w-auto">
+    <h1 class="text-[2.5em] flex-row mb-[10vh] md:order-1 md:w-[40%] md:mr-[20%] md:mb-[8vh]">RULES</h1>
+    <img src="images/image-rules-bonus.svg" class="w-[310px] md:order-3 md:w-[70%] md:m-auto" alt="">
+    <img src="images/icon-close.svg" class="cursor-pointer mt-[15vh] w-[20px] md:order-2 md:mt-0 md:mb-[8vh]"
+      onclick="rules('close')">
+  </div>
+  <div id="overlay"
+    class="fixed -top-[150%] left-0 w-[100%] h-[100vh] bg-white transition-all duration-500 ease-in-out md:bg-[#171e4199]">
+  </div>
+
+  <div id="skip" class="w-[150%] md:w-[100%] h-[300vh] fixed top-[var(--move-skip)] left-[var(--move-skip)] translate-y-[-50%] translate-x-[-50%] transition-all duration-[2500ms] ease-in-out rotate-[30deg]"></div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

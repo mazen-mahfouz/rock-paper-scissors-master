@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+    min-height: 100%;
+}
+
+body{
+    background-image: linear-gradient(to bottom left, hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    position: relative;
+}
+
+:root{
+    --background-skill: unset;
+    --shadow_skill: unset;    
+    --background_skill2: unset;
+    --shadow_skill2: unset; 
+    --containt_background: #192845;
+    --containt_shadow: unset;
+    --move-skip: -160%;
+    --background_skip: unset;
+    --size_win: 0px;
+}
+
+#app #battle div .active{
+    background-image: linear-gradient(to top, var(--background-skill));
+    box-shadow: inset 0px -5px 1px var(--shadow_skill);
+}
+
+#app #battle div:nth-child(3) .active{
+    background-image: linear-gradient(to top, var(--background_skill2));
+    box-shadow: inset 0px -5px 1px var(--shadow_skill2);
+}
+
+#app #battle div:nth-child(3) .active .containt{
+    background-color: var(--containt_background);
+    box-shadow: inset 0px 8px 2px 0px var(--containt_shadow);
+}
+
+.active_win::after{
+    content: "";
+    position: absolute;
+    width: 210%;
+    height: 210%;
+    border-radius: 100%;
+    border: var(--size_win) solid #ffffff05;
+    z-index: -10;
+    transition: .5s;
+}
+
+.active_win::before{
+    content: "";
+    position: absolute;
+    width: 155%;
+    height: 155%;
+    border-radius: 100%;
+    border: var(--size_win) solid #ffffff0f;
+    z-index: -10;
+    transition: .5s;
+}
+
+
+.skills{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: .5s;
+    opacity: .9;
+    cursor: pointer;
+}
+
+.skills:nth-child(1){
+    background-image: linear-gradient(to top, hsl(39, 89%, 49%) , hsl(40, 84%, 53%));
+    box-shadow: inset 0px -5px 1px #c26b1c;
+    transform: translateY(-110px);
+}
+
+.skills:nth-child(2){
+    background-image: linear-gradient(to top, hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
+    box-shadow: inset 0px -5px 1px #3590aa;
+    transform:translate(-110px,-20px);
+}
+
+.skills:nth-child(3){
+    background-image: linear-gradient(to top, hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
+    box-shadow: inset 0px -5px 1px #2944c0;
+    transform: translate(110px,-20px);
+}
+
+.skills:nth-child(4){
+    background-image: linear-gradient(to top, hsl(349, 71%, 52%) , hsl(349, 70%, 56%));
+    box-shadow: inset 0px -5px 1px #931e3c;
+    transform: translate(70px,110px);
+}
+
+.skills:nth-child(5){
+    background-image: linear-gradient(to top, hsl(261, 73%, 60%) , hsl(261, 72%, 63%));
+    box-shadow: inset 0px -5px 1px #6041a8;
+    transform: translate(-70px,110px);
+}
+
+.skills:hover{
+    opacity: 1;
+    scale: 1.1;
+}
+
+.skills .containt{
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 8px 2px 0px#dbdbdb;
+    background-color: #efeff1;
+    transition: .8s;
+  }
+
+ #app #battle .skills{
+    width: 120px;
+    height: 120px;
+}
+
+#play-again{
+    background-image: linear-gradient(to top, var(--background-skip));
+}
+
+#skip{
+    background-image: linear-gradient(to top, var(--background-skip));
+}
+  
+  @media only screen and (min-width: 640px) {
+    .skills{
+        width: 120px;
+        height: 120px;
+    }
+
+    #app #battle .skills{
+        width: 150px;
+        height: 150px;
+    }
+
+    .skills:nth-child(1){
+        transform: translateY(-140px);
+    }
+
+    .skills:nth-child(2){
+        transform:translate(-150px,-30px);
+    }
+
+    .skills:nth-child(3){
+        transform: translate(150px,-30px);
+    }
+
+    .skills:nth-child(4){
+        transform: translate(100px,140px);
+    }
+
+    .skills:nth-child(5){
+        transform: translate(-100px,140px);
+    }
+
+}
+
+  @media only screen and (min-width: 768px) {
+
+    .skills{
+        width: 150px;
+        height: 150px;
+    }
+
+    #app #battle .skills{
+        width: 180px;
+        height: 180px;
+    }
+
+    .skills:nth-child(1){
+        transform: translateY(-150px);
+    }
+
+    .skills:nth-child(2){
+        transform:translate(-170px,-40px);
+    }
+
+    .skills:nth-child(3){
+        transform: translate(170px,-40px);
+    }
+
+    .skills:nth-child(4){
+        transform: translate(120px,160px);
+    }
+
+    .skills:nth-child(5){
+        transform: translate(-120px,160px);
+    }
+
+    #rules-side{
+        flex-direction: unset;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    #app{
+        gap: 10vh
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (min-height: 700px) {
+    #app{
+        gap: 4vh
+    }
+}
+
+@media only screen and (min-height: 820px) {
+    #app{
+        gap: 12vh
+    }
+}   
+
+@media only screen and (min-height: 900px) {
+    #app{
+        gap: 15vh
+    }
+}   
