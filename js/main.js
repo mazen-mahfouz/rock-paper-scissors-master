@@ -78,7 +78,7 @@ function select_skills(x){
         r.style.setProperty('--background-skip', el.background);
         r.style.setProperty('--background-skill', el.background);
         r.style.setProperty('--shadow_skill', el.shadow);
-        r.style.setProperty('--move-skip', 160 + '%');
+        r.style.setProperty('--move-skip', 170 + '%');
         setTimeout(() => {
             select.style.opacity = 0;
         }, 500);

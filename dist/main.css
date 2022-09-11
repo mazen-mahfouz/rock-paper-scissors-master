@@ -611,12 +611,12 @@ video {
   margin: auto;
 }
 
-.mt-\[25px\] {
-  margin-top: 25px;
+.mt-\[22px\] {
+  margin-top: 22px;
 }
 
-.mb-\[\.2em\] {
-  margin-bottom: .2em;
+.mb-\[\.3em\] {
+  margin-bottom: .3em;
 }
 
 .mt-5 {
@@ -746,12 +746,12 @@ video {
   justify-items: center;
 }
 
-.gap-\[10vh\] {
-  gap: 10vh;
+.gap-\[8vh\] {
+  gap: 8vh;
 }
 
-.gap-\[2em_50px\] {
-  gap: 2em 50px;
+.gap-\[1\.8em_50px\] {
+  gap: 1.8em 50px;
 }
 
 .justify-self-end {
@@ -793,11 +793,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\.\.\/images\/bg-pentagon\.svg\'\)\] {
   background-image: url('../images/bg-pentagon.svg');
 }
@@ -828,14 +823,9 @@ video {
   padding-right: 1.75rem;
 }
 
-.px-\[50px\] {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.py-\[13px\] {
-  padding-top: 13px;
-  padding-bottom: 13px;
+.px-\[45px\] {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .px-\[35px\] {
@@ -888,20 +878,16 @@ video {
   font-size: 3.2em;
 }
 
-.text-\[1\.3em\] {
-  font-size: 1.3em;
+.text-\[1\.1em\] {
+  font-size: 1.1em;
 }
 
-.text-\[4em\] {
-  font-size: 4em;
+.text-\[3em\] {
+  font-size: 3em;
 }
 
 .text-\[1\.2em\] {
   font-size: 1.2em;
-}
-
-.text-\[1\.5em\] {
-  font-size: 1.5em;
 }
 
 .text-\[2\.5em\] {
@@ -1107,8 +1093,8 @@ body{
 }
 
 #app #battle .skills{
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
 }
 
 #play-again{
@@ -1123,6 +1109,10 @@ body{
   .skills{
     width: 120px;
     height: 120px;
+  }
+
+  #app{
+    gap: 10vh
   }
 
   #app #battle .skills{
@@ -1189,7 +1179,7 @@ body{
 
 @media only screen and (max-width: 640px) {
   #app{
-    gap: 10vh
+    gap: 7vh
   }
 }
 
