@@ -64,8 +64,8 @@ body{
 
 
 .skills{
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -79,31 +79,31 @@ body{
 .skills:nth-child(1){
     background-image: linear-gradient(to top, hsl(39, 89%, 49%) , hsl(40, 84%, 53%));
     box-shadow: inset 0px -5px 1px #c26b1c;
-    transform: translateY(-110px);
+    transform: translateY(-90px);
 }
 
 .skills:nth-child(2){
     background-image: linear-gradient(to top, hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
     box-shadow: inset 0px -5px 1px #3590aa;
-    transform:translate(-110px,-20px);
+    transform:translate(-100px,-15px);
 }
 
 .skills:nth-child(3){
     background-image: linear-gradient(to top, hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
     box-shadow: inset 0px -5px 1px #2944c0;
-    transform: translate(110px,-20px);
+    transform: translate(100px,-15px);
 }
 
 .skills:nth-child(4){
     background-image: linear-gradient(to top, hsl(349, 71%, 52%) , hsl(349, 70%, 56%));
     box-shadow: inset 0px -5px 1px #931e3c;
-    transform: translate(70px,110px);
+    transform: translate(60px,100px);
 }
 
 .skills:nth-child(5){
     background-image: linear-gradient(to top, hsl(261, 73%, 60%) , hsl(261, 72%, 63%));
     box-shadow: inset 0px -5px 1px #6041a8;
-    transform: translate(-70px,110px);
+    transform: translate(-60px,100px);
 }
 
 .skills:hover{
