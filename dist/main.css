@@ -993,6 +993,7 @@ body{
   --move-skip: -160%;
   --background_skip: unset;
   --size_win: 0px;
+  --color-background-button: unset;
 }
 
 #app #battle div .active{
@@ -1040,7 +1041,7 @@ body{
   justify-content: center;
   align-items: center;
   position: absolute;
-  transition: .5s;
+  transition: 1s;
   opacity: .9;
   cursor: pointer;
 }
@@ -1051,10 +1052,18 @@ body{
   transform: translateY(-90px);
 }
 
+.skills:nth-child(1):hover{
+  box-shadow: 0 0 30px 8px #a8710b, 0 6px 0 0 #a8710b;
+}
+
 .skills:nth-child(2){
   background-image: linear-gradient(to top, hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
   box-shadow: inset 0px -5px 1px #3590aa;
   transform:translate(-100px,-15px);
+}
+
+.skills:nth-child(2):hover{
+  box-shadow: 0 0 30px 8px #37727c, 0 6px 0 0 #37727c;
 }
 
 .skills:nth-child(3){
@@ -1063,21 +1072,33 @@ body{
   transform: translate(100px,-15px);
 }
 
+.skills:nth-child(3):hover{
+  box-shadow: 0 0 30px 8px rgb(47, 72, 196), 0 6px 0 0 rgb(47, 72, 196);
+}
+
 .skills:nth-child(4){
   background-image: linear-gradient(to top, hsl(349, 71%, 52%) , hsl(349, 70%, 56%));
   box-shadow: inset 0px -5px 1px #931e3c;
   transform: translate(60px,100px);
 }
 
+.skills:nth-child(4):hover{
+  box-shadow: 0 0 30px 8px  #a11831, 0 6px 0 0  #a11831 ;
+}
+
 .skills:nth-child(5){
   background-image: linear-gradient(to top, hsl(261, 73%, 60%) , hsl(261, 72%, 63%));
-  box-shadow: inset 0px -5px 1px #6041a8;
+  box-shadow: inset 0px -5px 1px #4d3091;
   transform: translate(-60px,100px);
+}
+
+.skills:nth-child(5):hover{
+  box-shadow: 0 0 30px 8px #4d3091, 0 6px 0 0 #4d3091 ;
 }
 
 .skills:hover{
   opacity: 1;
-  scale: 1.1;
+  scale: 1.02;
 }
 
 .skills .containt{

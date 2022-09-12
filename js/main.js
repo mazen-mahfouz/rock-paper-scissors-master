@@ -23,11 +23,11 @@ function rules(x){
 }
 
 let array_skills = [
-    {key:'scissors', background: 'hsl(39, 89%, 49%) , hsl(40, 84%, 53%)', shadow: '#c26b1c'},
-    {key:'spock', background: 'hsl(189, 59%, 53%) , hsl(189, 58%, 57%)', shadow: '#3590aa'},
-    {key:'paper', background: 'hsl(230, 89%, 62%) , hsl(230, 89%, 65%)', shadow: '#2944c0'},
-    {key:'rock', background: 'hsl(349, 71%, 52%) , hsl(349, 70%, 56%)', shadow: '#931e3c'},
-    {key:'lizard', background: 'hsl(261, 73%, 60%) , hsl(261, 72%, 63%)', shadow: '#6041a8'}
+    {key:'scissors', background: 'hsl(39, 89%, 49%) , hsl(40, 84%, 53%)', shadow: '#c26b1c', solo_color:'hsl(39, 89%, 49%)'},
+    {key:'spock', background: 'hsl(189, 59%, 53%) , hsl(189, 58%, 57%)', shadow: '#3590aa', solo_color:'hsl(189, 59%, 53%)'},
+    {key:'paper', background: 'hsl(230, 89%, 62%) , hsl(230, 89%, 65%)', shadow: '#2944c0', solo_color:'hsl(230, 89%, 62%)'},
+    {key:'rock', background: 'hsl(349, 71%, 52%) , hsl(349, 70%, 56%)', shadow: '#931e3c', solo_color:'hsl(349, 71%, 52%)'},
+    {key:'lizard', background: 'hsl(261, 73%, 60%) , hsl(261, 72%, 63%)', shadow: '#6041a8', solo_color:'hsl(39, 89%, 49%)'}
 ];
 
 let select = document.getElementById('select');
